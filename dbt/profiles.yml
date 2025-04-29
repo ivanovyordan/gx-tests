@@ -1,0 +1,6 @@
+gx_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: gx_duckdb.db
