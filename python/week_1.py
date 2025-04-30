@@ -5,9 +5,8 @@ context = gx.get_context()
 
 batch = context.data_sources.pandas_default.read_csv(os.path.join(
     os.path.dirname(__file__),
-    "..",
-    "data", "orders.csv")
-)
+    "orders.csv"
+))
 
 expectation = gx.expectations.ExpectColumnValuesToNotBeNull(column="Customer_ID")
 
