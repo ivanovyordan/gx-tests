@@ -22,9 +22,8 @@ context.suites.add(suite)
 # Load data and validate using the suite
 batch = context.data_sources.pandas_default.read_csv(os.path.join(
     os.path.dirname(__file__),
-    "..",
-    "data", "orders.csv")
-)
+    "orders.csv"
+))
 results = batch.validate(suite)
 
 # Print results
