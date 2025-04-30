@@ -1,3 +1,4 @@
+import os
 import great_expectations as gx
 
 # Set up context
@@ -19,7 +20,11 @@ for expectation in expectations:
 context.suites.add(suite)
 
 # Load data and validate using the suite
-batch = context.data_sources.pandas_default.read_csv("data/orders.csv")
+batch = context.data_sources.pandas_default.read_csv(os.path.join(
+    os.path.dirname(__file__),
+    "..",
+    "data", "orders.csv")
+)
 results = batch.validate(suite)
 
 # Print results
